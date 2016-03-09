@@ -1,19 +1,16 @@
-const http = require('http');
-const port = 8080;
+const express    = require('express');
+const app        = express();
+const port 	 = process.env.PORT || 8080;
 
-const server = http.createServer(function(req, res) {
-  console.log('Recieved request: '+req.method+ ' '+req.url );
-  res.end('<!DOCTYPE html>'
-	  +'<html lang="en">'
-	  +'<head>'
-	  +'<meta charset="utf-8">'
-	  +'</head>'
-	  +'<body>'
-	  +'<h1>Welcome to What2Eat</h1>'
-	  +'</body>'
-	  +'</html>'); 
-});
+const path       = require('path');
+const publicPath = path.resolve(__dirname, 'public');
 
-server.listen(port, function() {
+app.set('port', port);
+app.use(express.static(publicPath));
+app.set('view', path.join(__dirname, 'view'));
+//app.set('view engine', 'ejs');
+
+// Start server
+app.listen(port, function() {
  console.log('Server started on port: '+port); 
 });
