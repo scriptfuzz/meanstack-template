@@ -7,8 +7,11 @@ const publicPath = path.resolve(__dirname, 'public');
 
 app.set('port', port);
 app.use(express.static(publicPath));
-app.set('view', path.join(__dirname, 'view'));
-//app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+// Load the routes
+require('./routes/routes.js')(app);
 
 // Start server
 app.listen(port, function() {
