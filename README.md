@@ -3,10 +3,11 @@ What2Eat
 
 ##How to run?
 
-1. Install Node.js 4.3.2 LTS
+1. Install *Node.js 4.3.2 LTS*
 2. Clone this repository
-3. Open a terminal and run ```node server.js```
-4. In your browser, navigate to [http://localhost:8080](http://localhost:8080/)
+3. Open a terminal and run ```npm install```
+4. On the terminal and run ```node server.js```
+5. In your browser, navigate to [http://localhost:8080](http://localhost:8080/)
 
 ##What should I know?
 
