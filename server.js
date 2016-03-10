@@ -1,19 +1,25 @@
-const http = require('http');
-const port = 8080;
+'use strict'
 
-const server = http.createServer(function(req, res) {
-  console.log('Recieved request: '+req.method+ ' '+req.url );
-  res.end('<!DOCTYPE html>'
-	  +'<html lang="en">'
-	  +'<head>'
-	  +'<meta charset="utf-8">'
-	  +'</head>'
-	  +'<body>'
-	  +'<h1>Welcome to What2Eat</h1>'
-	  +'</body>'
-	  +'</html>'); 
-});
+const express         = require('express');
+const app             = express();
+const port 	      = process.env.PORT || 8080;
 
-server.listen(port, function() {
- console.log('Server started on port: '+port); 
+const path            = require('path');
+const publicPath      = path.resolve(__dirname, 'public');
+const mustacheExpress = require('mustache-express');
+
+// Configuration
+app.set('port', port);
+app.use(express.static(publicPath));
+
+app.engine('html', mustacheExpress());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'html');
+
+// Load the routes
+require('./routes/routes.js')(app);
+
+// Start server
+app.listen(port, function() {
+ console.log('Server started on port: '+port);
 });
