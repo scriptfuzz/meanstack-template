@@ -14,5 +14,7 @@ What2Eat
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
 * [ECMAScript 6](http://es6-features.org/#Constants)
 * [Node.js](https://nodejs.org/en/)
+* [Express.js](https://github.com/j-diaz/what2eat.git)
+* [Mustache](https://mustache.github.io/) template engine
 * [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) protocol
 * General knowledge of how the web works.
