@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
 
 const express         = require('express');
 const app             = express();
-const port 	      = process.env.PORT || 8080;
+const port 	      = process.env.PORT || 3000;
 
 const path            = require('path');
 const publicPath      = path.resolve(__dirname, 'public');
@@ -20,6 +20,6 @@ app.set('view engine', 'html');
 require('./routes/routes.js')(app);
 
 // Start server
-app.listen(port, function() {
+app.listen(port, () => {
  console.log('Server started on port: '+port);
 });
