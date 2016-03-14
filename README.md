@@ -18,3 +18,8 @@ What2Eat
 * [Mustache](https://mustache.github.io/) template engine
 * [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) protocol
 * General knowledge of how the web works.
+
+##System Architecture
+
+Block diagram of system component architecture
+![Architecture](docs/architecture/w2eThreeTierArch.png)
