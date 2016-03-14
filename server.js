@@ -16,8 +16,12 @@ app.engine('html', mustacheExpress());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-// Load the routes
-require('./routes/routes.js')(app);
+const version = 'v1';
+// Load the API routes.
+require('./routes/api-routes.js')(app, version);
+
+// Load the Web site routes.
+require('./routes/site-routes.js')(app);
 
 // Start server
 app.listen(port, function() {
