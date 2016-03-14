@@ -1,10 +1,12 @@
-'use strict'
+'use strict';
 
+// Importing necesary libraries
 const express         = require('express');
 const app             = express();
 const port 	      = process.env.PORT || 8080;
 
 const path            = require('path');
+// Path to serve static web files (css, jss, etc.)
 const publicPath      = path.resolve(__dirname, 'public');
 const mustacheExpress = require('mustache-express');
 
@@ -20,7 +22,7 @@ const version = 'v1';
 // Load the API routes.
 require('./routes/api-routes.js')(app, version);
 
-// Load the Web site routes.
+// Load the web site routes.
 require('./routes/site-routes.js')(app);
 
 // Start server
