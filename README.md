@@ -12,6 +12,7 @@ What2Eat
 ##What should I know?
 
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
+* [Strict Mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 * [ECMAScript 6](http://es6-features.org/#Constants)
 * [Node.js](https://nodejs.org/en/)
 * [Express.js](https://github.com/j-diaz/what2eat.git)
