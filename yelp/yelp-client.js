@@ -26,10 +26,12 @@ module.exports = function() {
      return result;
    });
  };
-
+ 
+ // Object encapsulating calls to the yelp api
  return {
-   search: (location) => { 
-     console.log('Seaching yelp for restaurants: '+location);
+   search: (uri) => { 
+     options.path += uri;
+     console.log('Seaching yelp for restaurants: '+JSON.stringify(options));
      return http.request(options, callback);
    }
   };

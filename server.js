@@ -3,7 +3,7 @@
 // Importing necesary libraries
 const express         = require('express');
 const app             = express();
-const port 	      = process.env.PORT || 8080;
+const port 	          = process.env.PORT || 8080;
 
 const path            = require('path');
 // Path to serve static web files (css, jss, etc.)
