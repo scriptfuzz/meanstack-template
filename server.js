@@ -24,6 +24,6 @@ require('./routes/api-routes.js')(app, apiVersion);
 require('./routes/site-routes.js')(app);
 
 // Start server
-app.listen(port, function() {
+app.listen(port, () => {
  console.log('Server started on port: '+port);
 });
