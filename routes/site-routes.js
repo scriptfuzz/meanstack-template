@@ -5,18 +5,28 @@
 // (User facing URL end points)
 // -----------------------------------------------
 
-const yelp = require('../yelp/yelp-client.js');
+const Yelp = require('yelp');
+
+const yelp = new Yelp({
+ consumer_key: process.env.CONSUMER_KEY,
+ consumer_secret: process.env.CONSUMER_SECRET,
+ token: process.env.TOKEN,
+ token_secret: process.env.TOKEN_SECRET
+});
 
 module.exports = function(app) {
- 
+
  // Get the root web page (landing page).
  app.get('/', (req, res) => {
-   
-   /*let location = '/search?term=food&location=Tampa';
-   let businesses = yelp.search(location);
-   console.log('Recieved business: '+JSON.stringify(business));
-	*/
-   res.render('master', {name: 'Jose'});
+
+   yelp.search({ term: 'food', location: 'Tampa'})
+     .then((data) => {
+        console.log('Recieved this from yelp: \n' +JSON.stringify(data));
+        res.render('master', {name: 'Jose'});
+      })
+      .catch((err) => {
+        console.error(err);
+      });
  });
 
  // To do: add more website routes.
