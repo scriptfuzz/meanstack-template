@@ -17,8 +17,7 @@ What2Eat
 * [Node.js](https://nodejs.org/en/)
 * [Express.js](https://github.com/j-diaz/what2eat.git)
 * [Mustache](https://mustache.github.io/) template engine
-* [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) protocol
-* General knowledge of how the web works.
+* General knowledge of how the web works (HTTP, HTTP2, WebSockets, HTML, CSS, etc.).
 
 ##System Architecture
 
