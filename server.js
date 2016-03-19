@@ -1,6 +1,5 @@
 'use strict';
 
-// Importing necesary libraries
 const express      = require('express'),
    app             = express(),
    port            = process.env.PORT || 8080,
