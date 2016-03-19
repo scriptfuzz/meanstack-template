@@ -17,6 +17,8 @@ What2Eat
 * [Node.js](https://nodejs.org/en/)
 * [Express.js](https://github.com/j-diaz/what2eat.git)
 * [Mustache](https://mustache.github.io/) template engine
+* [JQuery](http://jquery.com/)
+* [Boostrap CSS](http://getbootstrap.com/css/) 
 * General knowledge of how the web works (HTTP, HTTP2, WebSockets, HTML, CSS, etc.).
 
 ##System Architecture
