@@ -1,9 +1,9 @@
 (function () {
 
-	var location = null;
-
-	function initialize() {
-		var mapProp = {
+  var location = null;
+  
+  function initialize() {
+    var mapProp = {
       center: new google.maps.LatLng(51.508742,-0.120850),
       zoom:5,
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -16,9 +16,9 @@
   if (navigator.geolocation) {
    location = navigator.geolocation.getCurrentPosition();
    console.log('location: '+location);
- } else {
+  } else {
    console.log('Geolocation is not supported by this browser.');
- }
+  }
  
 })();
 
