@@ -19,14 +19,15 @@ module.exports = function(app) {
  // Get the root web page (landing page).
  app.get('/', (req, res) => {
 
-   yelp.search({ term: 'food', location: 'Tampa'})
+   /*yelp.search({ term: 'food', location: 'Tampa'})
      .then((data) => {
         console.log('Recieved this from yelp: \n' +JSON.stringify(data));
         res.render('master', {name: 'Jose'});
       })
       .catch((err) => {
         console.error(err);
-      });
+      });*/
+      res.render('master', {name: 'Jose'});
  });
 
  // To do: add more website routes.
