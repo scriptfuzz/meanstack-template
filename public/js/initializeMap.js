@@ -13,7 +13,7 @@
   };
 
   function getCoordinates(position) {
-    location = {latitude: position.coords.latitude, longitude: position.coords.longitude};
+    location = { latitude: position.coords.latitude, longitude: position.coords.longitude };
     console.log('location: ' + JSON.stringify(location));
   };
 
