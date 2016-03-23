@@ -1,4 +1,8 @@
-(function () {
+// This module takes yelp data and creates
+// a GoogleMap with the nearest restaurants
+// highlighted by markers
+
+(function (yelpData) {
   'use strict';
 
   var location = {};
@@ -24,4 +28,4 @@
     console.log('Geolocation is not supported by this browser.');
   }
 
-})();
+})(yelpData);
