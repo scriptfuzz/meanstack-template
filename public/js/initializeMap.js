@@ -2,7 +2,7 @@
   'use strict';
 
   var location = {};
-  
+
   function initialize() {
     var mapProp = {
       center: new google.maps.LatLng(location.latitude, location.longitude),
@@ -14,14 +14,14 @@
 
   function getCoordinates(position) {
     location = {latitude: position.coords.latitude, longitude: position.coords.longitude};
-    console.log('location: '+JSON.stringify(location));
+    console.log('location: ' + JSON.stringify(location));
   };
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getCoordinates);
     google.maps.event.addDomListener(window, 'load', initialize);
   } else {
-   console.log('Geolocation is not supported by this browser.');
+    console.log('Geolocation is not supported by this browser.');
   }
- 
+
 })();
