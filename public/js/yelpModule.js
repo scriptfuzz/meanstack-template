@@ -1,7 +1,8 @@
 // This module provides a global object
 // with operations for finding Yelp data.
-
 var YELP = (function(window, $, coordinates) {
+  
+  'use strict';  
 
   var contextArray = window.location.hostname.split('.');
   var context = (contextArray.length == 1 ? contextArray[0] : contextArray[1]);

@@ -2,7 +2,8 @@
 // a GoogleMap with the nearest restaurants
 // highlighted by markers
 
-(function (yelpData) {
+// Uses the global YELP module
+(function (YELP) {
   'use strict';
 
   var location = {};
@@ -28,4 +29,4 @@
     console.log('Geolocation is not supported by this browser.');
   }
 
-})(yelpData);
+})(YELP);
