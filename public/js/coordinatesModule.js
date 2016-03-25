@@ -7,15 +7,19 @@ var COORDINATES = (function() {
   var location = {};
 
   function assignCoordinates(coordinates) {
-    return coordinates;
+    location = coordinates;
+    return;
   };
 
   if (navigator.geolocation) {
     
     navigator.geolocation.getCurrentPosition(function(position) {
+      
       var c = {latitude: position.coords.latitude, longitude: position.coords.longitude};
       console.log('position: ' + JSON.stringify(c));
-      assignCoordinates(c);
+
+      location = position;
+      return;
     });
 
   } else {
