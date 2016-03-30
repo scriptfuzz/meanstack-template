@@ -1,30 +1,31 @@
 // This module is responsible for storing the users
 // location in the COORDINATES global variable.
 
-var COORDINATES = (function() {
-  'use strict';
-
-  var location = {};
-
-  function assignCoordinates(coordinates) {
-    location = coordinates;
-    return;
-  };
-
-  if (navigator.geolocation) {
+if (navigator.geolocation) {
     
-    navigator.geolocation.getCurrentPosition(function(position) {
-      
-      var c = {latitude: position.coords.latitude, longitude: position.coords.longitude};
-      console.log('position: ' + JSON.stringify(c));
+  var res = navigator.geolocation.getCurrentPosition(function(position) {
+   'use strict';
 
-      location = position;
-      return;
-    });
+    var c = {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude
+            };
 
-  } else {
-    console.log('Geolocation is not supported by this browser.');
-    return location;
-  }
+    console.log('position: ' + JSON.stringify(c));
+    
+    function initialize() {
+      var mapProp = {
+        center: new google.maps.LatLng(c.latitude, c.longitude),
+        zoom:5,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+    };
 
-}());
+    google.maps.event.addDomListener(window, 'ready', initialize);
+    console.log('Completed map initialization.'); 
+  });
+
+} else {
+  console.log('Geolocation is not supported by this browser.');
+}

@@ -1,10 +1,10 @@
 // This module provides a global object
 // with operations for finding Yelp data.
-var YELP = (function(window, $, coordinates, apiVersion) {
+var YELP = (function(window, $, apiVersion) {
   'use strict';
 
   var yelp = {
-    fetch: function (callback) {
+    fetch: function (coordinates, callback) {
       // Todo: Fix this here...
       $.ajax({
         url: '/api/'+ apiVersion +'/yelp',
@@ -23,4 +23,4 @@ var YELP = (function(window, $, coordinates, apiVersion) {
   };
 
   return yelp;
-}(window, $, COORDINATES, 'v1'));
+}(window, $, 'v1'));
