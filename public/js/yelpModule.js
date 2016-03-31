@@ -5,9 +5,9 @@ var YELP = (function(window, $, apiVersion) {
 
   var yelp = {
     fetch: function (coordinates, callback) {
-      // Todo: Fix this here...
+      // coordinates - must contain latitude & longitude properties
       $.ajax({
-        url: '/api/'+ apiVersion +'/yelp',
+        url: '/api/'+ apiVersion +'/restaurant/all',
         type: 'GET',
         data: coordinates,
         success: function(data) {
