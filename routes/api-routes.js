@@ -24,14 +24,14 @@ module.exports = function(app, version) {
   const prefix = '/api/'+version;
 	
   // Get all the restaurants available in the system
-  app.get(prefix + '/restaurant/all', function(req, res) {
+  app.get(prefix + '/restaurant/all', (req, res) => {
 
      console.log('Request query params: long=' +req.query.longitude + ', lat=' + req.query.latitude);
     
      var longitude = req.query.longitude,
         latitude = req.query.latitude;
 
-     yelp.search({ term: 'food', ll: {'longitude': longitude, 'latitude':latitude} })
+     yelp.search({ term: 'food', longitude: longitude, latitude: latitude })
        .then((data) => {
           console.log('Recieved this from yelp: \n' +JSON.stringify(data));
           res.send(data);

@@ -22,7 +22,7 @@ if (navigator.geolocation) {
 
     YELP.fetch(coords, function(result) {
       console.log(JSON.stringify(result));
-    })
+    });
   
   });
 
