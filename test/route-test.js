@@ -3,28 +3,28 @@
 
 const request = require('supertest');
 
-describe('loading express', function() {
+describe('loading express', () => {
 
   // Instantiate the server
   var server;
 
-  beforeEach(function() {
+  beforeEach(() => {
   	// Remove cache
   	delete require.cache[require.resolve('../server.js')];
   	server = require('../server.js');
   });
 
-  afterEach(function(done) {
+  afterEach((done) => {
   	server.close(done);
   });
 
-  it('responds to /', function testSlash(done) {
+  it('responds to /', (done) => {
   	request(server)
   		.get('/')
   		.expect(200, done);
   });
 
-  it('404 everything else', function testPath(done) {
+  it('404 everything else', (done) => {
   	console.log('test 404');
   	request(server)
   		.get('/foo/bar')
