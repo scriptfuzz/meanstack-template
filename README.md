@@ -7,8 +7,12 @@ What2Eat
 2. Clone this repository
 3. Open a terminal and run ```npm install```
 4. On the terminal and run ```node server.js```
-5. In your browser, navigate to [http://localhost:8080](http://localhost:8080/)
+5. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
 6. Feel like maximizing perfomance? Run ```node cluster.js``` instead of step 4.
+
+##Testing
+
+* Run ```mocha -R spec test/route-test.js```
 
 ##What should I know?
 
