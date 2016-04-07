@@ -5,10 +5,12 @@ What2Eat
 
 1. Install *Node.js 4.3.2 LTS*
 2. Clone this repository
-3. Open a terminal and run ```npm install```
-4. On the terminal and run ```node server.js```
-5. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
-6. Feel like maximizing perfomance? Run ```node cluster.js``` instead of step 4.
+3. Open & replace the values in the ```oauth.sh``` with the approriate keys provided by Yelp.
+4. Run ```./oauth.sh```
+4. Open a terminal and run ```npm install```
+5. On the terminal run ```node server.js```
+6. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
+7. [Optional] Feel like maximizing perfomance? Run ```node cluster.js``` instead of step 5.
 
 ##Testing
 
@@ -21,6 +23,7 @@ What2Eat
 * [ECMAScript 6](http://es6-features.org/#Constants)
 * [Node.js](https://nodejs.org/en/)
 * [Express.js](https://github.com/j-diaz/what2eat.git)
+* [Mocha](http://mochajs.org/) testing framework
 * [Mustache](https://mustache.github.io/) template engine
 * [JQuery](http://jquery.com/)
 * [Boostrap CSS](http://getbootstrap.com/css/) 
