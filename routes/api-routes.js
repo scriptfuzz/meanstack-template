@@ -25,13 +25,11 @@ module.exports = function(app, version) {
 	
   // Get all the restaurants available in the system
   app.get(prefix + '/restaurant/all', (req, res) => {
-
-     console.log('Request query params: long=' +req.query.longitude + ', lat=' + req.query.latitude);
     
-     var longitude = req.query.longitude,
-        latitude = req.query.latitude;
+     var ll = req.query.latitude  + ',' + req.query.longitude;
+     console.log('ll: '+ll);
 
-     yelp.search({ term: 'food', longitude: longitude, latitude: latitude })
+     yelp.search({ term: 'food', ll: ll })
        .then((data) => {
           console.log('Recieved this from yelp: \n' +JSON.stringify(data));
           res.send(data);
@@ -39,14 +37,6 @@ module.exports = function(app, version) {
         .catch((err) => {
           console.error(err);
         });
-
-     // Sample data. In reality will come from db.
-     let sampleData = { restaurants:['restaurant1', 'restaurant2'] };
-     
-     console.log('Sending restaurants: '+JSON.stringify(sampleData));
-     // Send data in JSON format to browser or whoever made the 
-     // HTTP call.
-     res.send(sampleData);
   });
 
   // To do: add more API routes..
