@@ -30,7 +30,24 @@ if (navigator.geolocation) {
     console.log('Completed map initialization.');
 
     YELP.fetch(coords, function(result) {
-      // TODO: Iterate through data and add the marker in the restaurant locations
+    
+      var businesses = result.businesses;
+      // 1. Iterate through data and add the marker in the restaurant locations
+      businesses.forEach(function(business) {
+        // 2. collect their name, lat & lng
+        var name = business.name,
+           coords = business.location.coordinate;
+        
+        var businessMarker = new google.maps.Marker({
+          position: {lat: coords.latitude, lng: coords.longitude},
+          map: map,
+          draggable: false,
+          animation: google.maps.Animation.Drop
+        });
+        // 3. create a marker in the map for it
+        businessMarker.setMap(map);
+      });
+
     });
   
   });
