@@ -7,10 +7,10 @@ What2Eat
 2. Clone this repository
 3. Open & replace the values in the ```oauth.sh``` with the approriate keys provided by Yelp.
 4. Run ```./oauth.sh```
-4. Open a terminal and run ```npm install```
-5. On the terminal run ```node server.js```
-6. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
-7. [Optional] Feel like maximizing perfomance? Run ```node cluster.js``` instead of step 5.
+5. Open a terminal and run ```npm install```
+6. On the terminal run ```node server.js```
+7. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
+8. [**Optional**] Feel like maximizing perfomance? Run ```node cluster.js``` instead of step 6.
 
 ##Testing
 
