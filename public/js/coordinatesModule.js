@@ -6,17 +6,16 @@ if (navigator.geolocation) {
    'use strict';
     
     var coords = { latitude: position.coords.latitude, 
-                   longitude: position.coords.longitude }
-    console.log(position.coords);
+                   longitude: position.coords.longitude };
     console.log('latitude = '+ position.coords.latitude);
     console.log('longitude = '+ position.coords.longitude);
   
     var mapProp = {
       center: new google.maps.LatLng(coords.latitude, coords.longitude),
-      zoom:15, // street level
+      zoom:13, // street level
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-
+    // Create current location marker
     var marker = new google.maps.Marker({
       position: {lat: coords.latitude, lng: coords.longitude},
       map: map,
@@ -29,9 +28,11 @@ if (navigator.geolocation) {
     marker.setMap(map);
     console.log('Completed map initialization.');
 
-    YELP.fetch(coords, function(result) {
+    // Fetch restuarant data from yelp
+    // and draw it in the map
+    YELP.fetch(coords, function(data) {
     
-      var businesses = result.businesses;
+      var businesses = data.businesses;
       // 1. Iterate through data and add the marker in the restaurant locations
       businesses.forEach(function(business) {
         // 2. collect their name, lat & lng
@@ -52,6 +53,6 @@ if (navigator.geolocation) {
   
   });
 
-} else {
+} else { // No geolocation :(
   console.log('Geolocation is not supported by this browser.');
 }
