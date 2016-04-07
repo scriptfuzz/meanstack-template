@@ -17,11 +17,20 @@ if (navigator.geolocation) {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
+    var marker = new google.maps.Marker({
+      position: {lat: coords.latitude, lng: coords.longitude},
+      map: map,
+      label: 'Y',
+      draggable: false,
+      animation: google.maps.Animation.DROP
+    });
+
     var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+    marker.setMap(map);
     console.log('Completed map initialization.');
 
     YELP.fetch(coords, function(result) {
-      console.log(JSON.stringify(result));
+      // TODO: Iterate through data and add the marker in the restaurant locations
     });
   
   });

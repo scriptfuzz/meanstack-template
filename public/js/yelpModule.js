@@ -11,7 +11,7 @@ var YELP = (function(window, $, apiVersion) {
         type: 'GET',
         data: coordinates,
         success: function(data) {
-          console.log('Recieved from yelp: ' + JSON.stringify(data));
+          //console.log('Recieved from yelp: ' + JSON.stringify(data));
           callback(data);
         },
         error: function(error) {
