@@ -26,13 +26,12 @@ if (navigator.geolocation) {
 
     var map = new google.maps.Map(document.getElementById('googleMap'), mapProp);
     marker.setMap(map);
-    console.log('Completed map initialization.');
 
     // Fetch restuarant data from yelp
     // and draw it in the map
     YELP.fetch(coords, function(data) {
     
-      var businesses = data.businesses;
+      var businesses = data.businesses || [];
       // 1. Iterate through data and add the marker in the restaurant locations
       businesses.forEach(function(business) {
         // 2. collect their name, lat & lng
@@ -49,6 +48,7 @@ if (navigator.geolocation) {
         businessMarker.setMap(map);
       });
 
+      console.log('Completed map initialization with markers.');
     });
   
   });
