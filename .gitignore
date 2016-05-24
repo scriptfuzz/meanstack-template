@@ -1,4 +1,7 @@
 node_modules/
 
-oath2_key*
+oauth.sh
+
+oauth2_key*
+
 tokens*

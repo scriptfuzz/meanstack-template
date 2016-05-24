@@ -46,6 +46,9 @@ if (navigator.geolocation) {
         });
         // 3. create a marker in the map for it
         businessMarker.setMap(map);
+
+	// 4. create an entry in the list of restaurants.
+	$('#restaurants').append('<li class="list-group-item">' + name + '</li>');
       });
 
       console.log('Completed map initialization with markers.');
