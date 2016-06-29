@@ -5,19 +5,21 @@ What2Eat
 
 1. Install *Node.js 4.3.2 LTS*
 2. Clone this repository
-3. Create a filenamed  ```oauth.sh``` with the following contents:```
-#!/bin/bash
+3. Create a filenamed  ```oauth.sh``` with the following contents:
+   ```
+   #!/bin/bash
 
-export CONSUMER_KEY='xxxxxxxxx'
+   export CONSUMER_KEY='xxxxxxxxx'
 
-export CONSUMER_SECRET='xxxxxxxxxx'
+   export CONSUMER_SECRET='xxxxxxxxxx'
 
-export TOKEN='xxxxxxxx'
+   export TOKEN='xxxxxxxx'
 
-export TOKEN_SECRET='xxxxxxxx'
+   export TOKEN_SECRET='xxxxxxxx'
 
-export PORT=9000
-```4. Open a terminal a run ```source oauth.sh```
+   export PORT=9000
+   ```
+4. Open a terminal a run ```source oauth.sh```
 5. In the terminal run ```npm install```
 6. In the terminal run ```node server.js```
 7. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
