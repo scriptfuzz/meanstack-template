@@ -5,22 +5,26 @@ const express      = require('express'),
    port            = process.env.PORT || 9000,
    path            = require('path'),
    staticFileDir   = path.resolve(__dirname, 'public'),
-   mustacheExpress = require('mustache-express'),
    apiVersion      = 'v1';
 
 // Configuration
 app.set('port', port);
-app.use(express.static(staticFileDir));
-// Configure server-side templaing engine
-app.engine('html', mustacheExpress());
-app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+app.use(express.static(staticFileDir));
+app.set('views', staticFileDir + '/views/');
+
 
 // Load the API routes.
 require('./routes/api-routes.js')(app, apiVersion);
 
 // Load the web site routes.
 require('./routes/site-routes.js')(app);
+
+//For any other route send index
+app.all('/*', function(req, res, next){
+ res.sendFile('index.html', {root: __dirname +'/public/views/'});
+});
 
 // Start server
 const server = app.listen(port, () => {

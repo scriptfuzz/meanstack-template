@@ -27,7 +27,7 @@ module.exports = function(app) {
       .catch((err) => {
         console.error(err);
       });*/
-      res.render('master', {name: 'Jose'});
+      res.render('index.html');
  });
 
  // To do: add more website routes.
