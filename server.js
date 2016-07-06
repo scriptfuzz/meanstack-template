@@ -1,11 +1,10 @@
 'use strict';
 
-const express      = require('express'),
+var express        = require('express'),
    app             = express(),
    port            = process.env.PORT || 9000,
    path            = require('path'),
-   staticFileDir   = path.resolve(__dirname, 'public'),
-   apiVersion      = 'v1';
+   staticFileDir   = path.resolve(__dirname, 'public');
 
 // Configuration
 app.set('port', port);
@@ -14,12 +13,10 @@ app.set('view engine', 'html');
 app.use(express.static(staticFileDir));
 app.set('views', staticFileDir + '/views/');
 
-
-// Load the API routes.
-require('./routes/api-routes.js')(app, apiVersion);
-
-// Load the web site routes.
-require('./routes/site-routes.js')(app);
+// Register an express route
+app.get('/', function(req, res ,next){
+	res.render('index.html');
+});
 
 //For any other route send index
 app.all('/*', function(req, res, next){
@@ -27,7 +24,7 @@ app.all('/*', function(req, res, next){
 });
 
 // Start server
-const server = app.listen(port, () => {
+var server = app.listen(port, function() {
  console.log('Server started on port: '+port);
 });
 

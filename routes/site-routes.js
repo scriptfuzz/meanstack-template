@@ -17,7 +17,7 @@ const yelp = new Yelp({
 module.exports = function(app) {
 
  // Get the root web page (landing page).
- app.get('/', (req, res) => {
+ app.get('/', function(req, res) {
 
    /*yelp.search({ term: 'food', location: 'Tampa'})
      .then((data) => {

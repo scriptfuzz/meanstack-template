@@ -1,18 +1,20 @@
-// Define the `phonecatApp` module
+// Define the module
 var what2eatApp = angular.module('what2eatApp', []);
 
 // Define the `foodListController` controller on the `phonecatApp` module
 what2eatApp.controller('foodListController', function foodListController($scope) {
-  $scope.phones = [
+  
+  $scope.restaurants = [
     {
-      name: 'Nexus S',
-      snippet: 'Fast just got faster with Nexus S.'
+      name: 'La cantina',
+      description: 'Mexican caqui food'
     }, {
-      name: 'Motorola XOOM™ with Wi-Fi',
-      snippet: 'The Next, Next Generation tablet.'
+      name: 'La lechonera',
+      description: 'Grasita para el alma'
     }, {
-      name: 'MOTOROLA XOOM™',
-      snippet: 'The Next, Next Generation tablet.'
+      name: 'BBQ Grill',
+      description: 'Chicken, fat and spicy'
     }
   ];
+
 });
