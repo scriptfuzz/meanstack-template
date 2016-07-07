@@ -4,24 +4,19 @@ var express        = require('express'),
    app             = express(),
    port            = process.env.PORT || 9000,
    path            = require('path'),
-   staticFileDir   = path.resolve(__dirname, 'public');
+   staticFileDir   = path.resolve(__dirname, 'public'),
+   version         = 'v1';
 
 // Configuration
 app.set('port', port);
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+// Serve static files e.g. hmtl,css,js
 app.use(express.static(staticFileDir));
 app.set('views', staticFileDir + '/views/');
 
-// Register an express route
-app.get('/', function(req, res ,next){
-	res.render('index.html');
-});
-
-//For any other route send index
-app.all('/*', function(req, res, next){
- res.sendFile('index.html', {root: __dirname +'/public/views/'});
-});
+// Register all backend url endpoints 
+require('./routes/api-routes.js')(app,version);
 
 // Start server
 var server = app.listen(port, function() {
