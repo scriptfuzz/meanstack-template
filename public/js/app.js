@@ -1,12 +1,6 @@
 // Define the module
 var app = angular.module('what2eatApp', ['ui.bootstrap']); // include dependency on ui.boostrap
 
-// Define a loadingBarController
-app.controller('loadingBarController', function loadingBarController($scope){
-
-})
-
-
 // Define the `foodListController` controller on the `phonecatApp` module
 app.controller('foodListController', function foodListController($scope, $http) {
   
