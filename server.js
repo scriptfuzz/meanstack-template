@@ -1,30 +1,28 @@
 'use strict';
 
-const express      = require('express'),
-   app             = express(),
-   port            = process.env.PORT || 9000,
-   path            = require('path'),
-   staticFileDir   = path.resolve(__dirname, 'public'),
-   mustacheExpress = require('mustache-express'),
-   apiVersion      = 'v1';
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 9000,
+    path = require('path'),
+    staticFileDir = path.resolve(__dirname, 'public'),
+    version = 'v1';
 
 // Configuration
 app.set('port', port);
-app.use(express.static(staticFileDir));
-// Configure server-side templaing engine
-app.engine('html', mustacheExpress());
-app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
+// Serve static files e.g. hmtl,css,js
+app.use(express.static(staticFileDir));
+app.set('views', staticFileDir + '/views/');
 
-// Load the API routes.
-require('./routes/api-routes.js')(app, apiVersion);
-
-// Load the web site routes.
-require('./routes/site-routes.js')(app);
+// Include font-awesome css direct from modules
+app.use(express.static(__dirname + '/node_modules/font-awesome'));
+// Register all backend url endpoints 
+require('./routes/api-routes.js')(app, version);
 
 // Start server
-const server = app.listen(port, () => {
- console.log('Server started on port: '+port);
+var server = app.listen(port, function() {
+    console.log('Server started on port: ' + port);
 });
 
 // Export the server as a module.
