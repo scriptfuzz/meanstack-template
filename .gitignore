@@ -1,5 +1,5 @@
 node_modules/
-
+*.~lock*
 *oauth.sh
 
 oauth2_key*
