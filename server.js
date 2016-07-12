@@ -15,8 +15,6 @@ app.set('view engine', 'html');
 app.use(express.static(staticFileDir));
 app.set('views', staticFileDir + '/views/');
 
-// Include font-awesome css direct from modules
-app.use(express.static(__dirname + '/node_modules/font-awesome'));
 // Register all backend url endpoints 
 require('./routes/api-routes.js')(app, version);
 
