@@ -1,0 +1,35 @@
+[
+ {
+   "name": "LasPerras",
+   "active": true,
+   "participants": ["jose","jan"],
+   "votes": {
+     "jose": "La cantina",
+     "jan": "Hooters"
+   },
+   "start": "2016-07-14T02:25:07.295Z",
+   "end": "2016-07-14T02:25:07.295Z"
+ },
+ {
+   "name": "LasLoqueras",
+   "active": true,
+   "participants": ["pepe","jan"],
+   "votes": {
+     "jose": "La cantina",
+     "jan": "Hooters"
+   },
+   "start": "2016-07-14T02:25:07.295Z",
+   "end": "2016-07-14T02:25:07.295Z"
+ },
+ {
+   "name": "LosMejores",
+   "active": true,
+   "participants": ["nerdo","flow007"],
+   "votes": {
+     "jose": "La cantina",
+     "jan": "Hooters"
+   },
+   "start": "2016-07-14T02:25:07.295Z",
+   "end": "2016-07-14T02:25:07.295Z"
+ }
+]

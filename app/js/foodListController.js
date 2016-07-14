@@ -26,7 +26,7 @@ app.controller('foodListController', function foodListController($scope, $http) 
                 $scope.progress = 80;
                 var data = response.data;
                 console.log(data);
-                // From the resulting data extract the businesses array 
+                // From the resulting data extract the businesses array
                 // if not defined set businesses variable to an empty
                 // array.
                 var businesses = data.businesses || [];
