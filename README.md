@@ -30,6 +30,7 @@ What2Eat
 
 ##Testing
 
+* Load seed data by running seed/setup.py
 * Run ```mocha -R spec test/route-test.js```
 
 ##What should I know?
@@ -42,6 +43,7 @@ What2Eat
 * [Express.js](https://github.com/j-diaz/what2eat.git)
 * [Boostrap CSS](http://getbootstrap.com/css/)
 * [Mocha](http://mochajs.org/) testing framework
+* [MongoDB](https://docs.mongodb.com/)
 * General knowledge of how the web works (HTTP, HTTP2, WebSockets, HTML, CSS, etc.).
 
 ##System Architecture
