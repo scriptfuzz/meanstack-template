@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/j-diaz/what2eat.svg?branch=master)](https://travis-ci.org/j-diaz/what2eat)
 What2Eat
 ========
 
