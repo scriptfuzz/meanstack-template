@@ -13,8 +13,6 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 // Serve static angular app
 app.use(express.static(ngAppPath));
-// Serve static dependencies a.k.a bower_components
-//app.use(express.static(__dirname + '../bower_components'));
 app.set('views', ngAppPath);
 
 // Register all backend url endpoints

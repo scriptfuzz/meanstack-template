@@ -10,8 +10,8 @@ describe('loading express', function(){
 
   beforeEach(function(){
   	// Remove cache
-  	delete require.cache[require.resolve('../server.js')];
-  	server = require('../server.js');
+  	delete require.cache[require.resolve('../backend/server.js')];
+  	server = require('../backend/server.js');
   });
 
   afterEach(function(done){
@@ -24,11 +24,11 @@ describe('loading express', function(){
   		.expect(200, done);
   });
 
-  it('404 everything else', function(done){
-  	console.log('test 404');
+  it('Everything else should return index', function(done){
+  	console.log('test 200 index');
   	request(server)
   		.get('/foo/bar')
-  		.expect(404, done);
+  		.expect(200, done);
   });
 
 });

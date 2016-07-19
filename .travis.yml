@@ -1,0 +1,9 @@
+language: node_js
+node_js: 
+ - "4.x"
+ - "4.0.x"
+ - "4.4.x"
+ - "4.2.x"
+ - "5.0.x"
+ env: 
+  - PORT=9000
