@@ -21,10 +21,11 @@ What2Eat
    ```
 4. Open a terminal a run ```source oauth.sh```
 5. Install backend dependencies. In the terminal run ```npm install```
-6. Install frontend dependencies. In the terminal run ```bower install```
-7. Run server. In the terminal run ```node backend/server.js```
-8. See web app. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
-9. [**Optional**] Feel like maximizing perfomance? Run ```node backend/cluster.js``` instead of step 6.
+6. Install client side dependency manager globally ```npm install -g bower```
+7. Install frontend dependencies. In the terminal run ```bower install```
+8. Run server. In the terminal run ```node backend/server.js```
+9. See web app. In your browser, navigate to [http://localhost:9000](http://localhost:9000/)
+10. [**Optional**] Feel like maximizing perfomance? Run ```node backend/cluster.js``` instead of step 8.
 
 ##Testing
 
