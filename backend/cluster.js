@@ -1,15 +1,15 @@
 'use strict';
 
-const cluster = require('cluster');
-const cpus    = require('os').cpus().length;
+var cluster = require('cluster'),
+    cpus    = require('os').cpus().length;
 
 if (cluster.isMaster) {
   
-  for (let i = 0; i < cpus; i++) {
+  for (var i = 0; i < cpus; i++) {
     cluster.fork();
   }
 
-  cluster.on('exit', (worker, code, signal) => {
+  cluster.on('exit', function(worker, code, signal) {
     console.log('worker '+ worker.process.pid + ' died');
   });
 
