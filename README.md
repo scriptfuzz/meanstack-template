@@ -49,4 +49,4 @@ What2Eat
 ##System Architecture
 
 Block diagram of system component architecture
-![Architecture](docs/architecture/w2eThreeTierArch.png)
+![Architecture](docs/architecture/What2EatArchitecture/Slide1.png)
